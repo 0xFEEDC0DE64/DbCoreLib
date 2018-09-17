@@ -7,10 +7,16 @@ TARGET = dbcore
 
 DEFINES += DBCORELIB_LIBRARY
 
-SOURCES +=
+SOURCES += \
+    randomdevice.cpp \
+    utils/timeutils.cpp \
+    utils/jsonutils.cpp
 
 HEADERS += dbcorelib_global.h \
-           fixedsizematrix.h
+           fixedsizematrix.h \
+    randomdevice.h \
+    utils/timeutils.h \
+    utils/jsonutils.h
 
 FORMS +=
 

@@ -13,6 +13,7 @@ SOURCES += \
     utils/jsonutils.cpp
 
 HEADERS += dbcorelib_global.h \
+           cpp14polyfills.h \
            fixedsizematrix.h \
     randomdevice.h \
     utils/timeutils.h \

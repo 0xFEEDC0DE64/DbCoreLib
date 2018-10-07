@@ -17,7 +17,7 @@ set(SOURCES
     utils/timeutils.cpp
 )
 
-add_library(dbcorelib ${HEADERS} ${SOURCES})
+add_library(dbcorelib SHARED ${HEADERS} ${SOURCES})
 
 target_compile_definitions(dbcorelib PRIVATE DBCORELIB_LIBRARY)
 

@@ -5,6 +5,7 @@
 #include <QDirIterator>
 #include <QFileInfo>
 #include <QFile>
+#include <QCoreApplication>
 
 bool emptyDirectory(const QString &path)
 {
@@ -43,4 +44,10 @@ bool emptyDirectory(const QString &path)
         qWarning() << "could not empty" << path;
 
     return success;
+}
+
+const QString &translationsDir()
+{
+    static const QString dir(QDir(QCoreApplication::applicationDirPath()).absoluteFilePath(QStringLiteral("translations")));
+    return dir;
 }

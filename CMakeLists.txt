@@ -7,12 +7,14 @@ set(HEADERS
     dbcorelib_global.h
     fixedsizematrix.h
     randomdevice.h
+    utils/fileutils.h
     utils/jsonutils.h
     utils/timeutils.h
 )
 
 set(SOURCES
     randomdevice.cpp
+    utils/fileutils.cpp
     utils/jsonutils.cpp
     utils/timeutils.cpp
 )
@@ -24,6 +26,8 @@ target_compile_definitions(dbcorelib PRIVATE DBCORELIB_LIBRARY)
 target_link_libraries(dbcorelib Qt5::Core)
 
 target_include_directories(dbcorelib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_dependencies(libs dbcorelib)
 
 
 add_executable(tst_fixedsizematrix tst_fixedsizematrix.cpp)

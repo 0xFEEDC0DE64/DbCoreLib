@@ -19,7 +19,16 @@ set(SOURCES
     utils/timeutils.cpp
 )
 
-add_library(dbcorelib SHARED ${HEADERS} ${SOURCES})
+set(TRANSLATIONS
+    translations/dbcorelib_en.ts
+    translations/dbcorelib_de.ts
+)
+
+set_source_files_properties(${TRANSLATIONS} PROPERTIES OUTPUT_LOCATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/translations)
+QT5_CREATE_TRANSLATION(TRANSLATIONS_C ${TRANSLATIONS} ${HEADERS} ${SOURCES} OPTIONS -no-obsolete)
+#QT5_ADD_TRANSLATION(TRANSLATIONS_C ${TRANSLATIONS})
+
+add_library(dbcorelib SHARED ${HEADERS} ${SOURCES} ${TRANSLATIONS_C})
 
 target_compile_definitions(dbcorelib PRIVATE DBCORELIB_LIBRARY)
 

@@ -21,3 +21,15 @@ QTime timeNormalise(const QTime &time)
 {
     return QTime(time.hour(), time.minute());
 }
+
+QDate beginOfMonth(QDate date)
+{
+    bool success = date.setDate(date.year(), date.month(), 1);
+    Q_ASSERT(success);
+    return date;
+}
+
+QDate endOfMonth(const QDate &date)
+{
+    return beginOfMonth(date.addMonths(1)).addDays(-1);
+}

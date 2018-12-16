@@ -1,8 +1,9 @@
 #pragma once
 
+#include "dbcorelib_global.h"
 #include <QIODevice>
 
-class RandomDevice : public QIODevice
+class DBCORELIB_EXPORT RandomDevice : public QIODevice
 {
     Q_OBJECT
 

@@ -1,19 +1,28 @@
 project(DbCoreLib)
 
+find_package(Qt5Core CONFIG REQUIRED)
+find_package(Qt5Test CONFIG REQUIRED)
+find_package(Qt5LinguistTools CONFIG REQUIRED)
+
 enable_testing()
 
 set(HEADERS
     cpp14polyfills.h
     dbcorelib_global.h
+    fifostream.h
     fixedsizematrix.h
     randomdevice.h
+    waverecorder.h
+    utils/datastreamutils.h
     utils/fileutils.h
     utils/jsonutils.h
     utils/timeutils.h
 )
 
 set(SOURCES
+    fifostream.cpp
     randomdevice.cpp
+    waverecorder.cpp
     utils/fileutils.cpp
     utils/jsonutils.cpp
     utils/timeutils.cpp

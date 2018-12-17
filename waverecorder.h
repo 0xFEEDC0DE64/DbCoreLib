@@ -19,6 +19,7 @@ public:
 
 public Q_SLOTS:
     void addSample(const qint32 sample);
+    void addSamples(const QVector<qint32> &samples);
 
 private:
     quint32 m_size = 0;

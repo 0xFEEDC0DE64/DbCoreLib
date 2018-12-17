@@ -39,3 +39,9 @@ void WaveRecorder::addSample(const qint32 sample)
 {
     m_dataStream << sample;
 }
+
+void WaveRecorder::addSamples(const QVector<qint32> &samples)
+{
+    for(auto sample : samples)
+        addSample(sample);
+}
